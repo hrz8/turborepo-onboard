@@ -13,9 +13,9 @@
     "typescript": "5.5.4"
   },
   "engines": {
-    "node": ">=18"
+    "node": ">=20"
   },
-  "packageManager": "yarn@1.22.22",
+  "packageManager": "yarn@4.5.3",
   "workspaces": [
     "apps/*",
     "packages/*"

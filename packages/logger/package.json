@@ -1,0 +1,25 @@
+{
+  "name": "@onboarding/logger",
+  "version": "0.0.1",
+  "description": "logger package for onboarding turborepo",
+  "author": "hirzinurfakhrian@gmail.com",
+  "license": "MIT",
+  "private": true,
+  "main": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist"
+  ],
+  "scripts": {
+    "build": "tsc",
+    "check-types": "tsc --noEmit"
+  },
+  "dependencies": {
+    "winston": "^3.17.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22.10.2",
+    "ts-node": "^10.9.2",
+    "typescript": "^5.7.2"
+  }
+}
