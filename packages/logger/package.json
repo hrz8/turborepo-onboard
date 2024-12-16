@@ -6,6 +6,7 @@
   "type": "module",
   "license": "MIT",
   "private": true,
+  "packageManager": "yarn@4.5.3",
   "main": "dist/index.cjs",
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
