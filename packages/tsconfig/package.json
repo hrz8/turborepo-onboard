@@ -1,0 +1,8 @@
+{
+  "name": "@onboarding/tsconfig",
+  "version": "0.0.0",
+  "description": "tsconfig package for onboarding monorepo",
+  "author": "hirzinurfakhrian@gmail.com",
+  "license": "MIT",
+  "private": true
+}

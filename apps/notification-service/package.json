@@ -3,28 +3,34 @@
   "version": "0.0.1",
   "description": "turborepo with express api",
   "author": "hirzinurfakhrian@gmail.com",
+  "type": "module",
   "license": "MIT",
   "private": true,
   "packageManager": "yarn@4.5.3",
   "scripts": {
-    "build": "rm -rf dist && tsc --p tsconfig.json -d",
-    "dev": "nodemon",
-    "start": "ts-node ./src/server.ts",
-    "start:prod": "node dist/server",
-    "check-types": "tsc --noEmit"
+    "cleanup": "rm -rf dist && rm -rf node_modules",
+    "build": "rm -rf dist && tsc --project tsconfig.json --declaration",
+    "dev": "nodemon --watch src --ext ts --ignore dist --exec \"tsx ./src/server.ts\"",
+    "start": "node dist/server",
+    "check-types": "tsc --noEmit",
+    "lint": "echo 'unimplemented'"
   },
   "dependencies": {
-    "@onboarding/logger": "*",
-    "@onboarding/rando": "*",
+    "@onboarding/logger": "workspace:*",
+    "@onboarding/rando": "workspace:*",
     "cors": "^2.8.5",
     "express": "^4.21.2"
   },
   "devDependencies": {
+    "@eslint/js": "^9.17.0",
+    "@onboarding/tsconfig": "workspace:*",
     "@types/cors": "^2.8.17",
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
-    "nodemon": "^3.1.7",
-    "ts-node": "^10.9.2",
-    "typescript": "^5.7.2"
+    "eslint": "^9.17.0",
+    "nodemon": "^3.1.9",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2",
+    "typescript-eslint": "^8.18.0"
   }
 }
