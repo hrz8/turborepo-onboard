@@ -8,16 +8,19 @@
   "private": true,
   "packageManager": "yarn@4.5.3",
   "scripts": {
-    "cleanup": "rm -rf dist && rm -rf node_modules",
-    "build": "rm -rf dist && tsc --project tsconfig.json --declaration",
+    "cleanup": "rimraf .turbo; rimraf dist; rimraf node_modules",
+    "build": "rimraf dist && tsc --project tsconfig.json --declaration",
     "dev": "nodemon --watch src --ext ts --ignore dist --exec \"tsx ./src/server.ts\"",
     "start": "node dist/server",
     "check-types": "tsc --noEmit",
     "lint": "echo 'unimplemented'"
   },
   "dependencies": {
+    "@grpc/grpc-js": "^1.12.4",
     "@onboarding/logger": "workspace:*",
+    "@onboarding/protos": "workspace:*",
     "@onboarding/rando": "workspace:*",
+    "@protobuf-ts/grpc-backend": "^2.9.4",
     "cors": "^2.8.5",
     "express": "^4.21.2"
   },
@@ -28,7 +31,7 @@
     "@types/express": "^5.0.0",
     "@types/node": "^22.10.2",
     "nodemon": "^3.1.9",
-    "prettier": "^3.4.2",
+    "rimraf": "^6.0.1",
     "tsx": "^4.19.2",
     "typescript": "^5.7.2"
   }

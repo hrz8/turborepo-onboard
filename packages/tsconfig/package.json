@@ -4,5 +4,6 @@
   "description": "tsconfig package for onboarding monorepo",
   "author": "hirzinurfakhrian@gmail.com",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "packageManager": "yarn@4.5.3"
 }

@@ -2,10 +2,7 @@
   "extends": "@onboarding/tsconfig/base.json",
   "compilerOptions": {
     "rootDir": "src",
-    "outDir": "dist",
-    "paths": {
-      "@proto/*": ["../../packages/protos/dist/gen/*"]
-    }
+    "outDir": "dist"
   },
   "include": ["src"],
   "exclude": ["node_modules", "dist"]

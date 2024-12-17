@@ -1,0 +1,44 @@
+{
+  "name": "@onboarding/protos",
+  "version": "0.0.0",
+  "description": "protobuf schema for onboarding monorepo",
+  "author": {
+    "name": "Hirzi Nurfakhrian",
+    "email": "hirzinurfakhrian@gmail.com"
+  },
+  "type": "module",
+  "license": "MIT",
+  "private": true,
+  "packageManager": "yarn@4.5.3",
+  "main": "dist/index.cjs",
+  "module": "dist/index.js",
+  "types": "dist/index.d.ts",
+  "files": [
+    "dist/*",
+    "package.json"
+  ],
+  "scripts": {
+    "cleanup": "rimraf .turbo; rimraf src/gen; rimraf dist; rimraf node_modules",
+    "build": "yarn gen:proto && tsup",
+    "dev:pkg": "yarn gen:proto && tsup --watch",
+    "check-types": "tsc --noEmit",
+    "lint": "echo 'unimplemented'",
+    "gen:proto": "rimraf src/gen && buf generate && tsx ./scripts/gen-grpc-index.ts"
+  },
+  "dependencies": {
+    "@bufbuild/protobuf": "^2.2.3",
+    "@grpc/grpc-js": "^1.12.4",
+    "@protobuf-ts/grpc-transport": "^2.9.4",
+    "@protobuf-ts/runtime": "^2.9.4",
+    "@protobuf-ts/runtime-rpc": "^2.9.4"
+  },
+  "devDependencies": {
+    "@bufbuild/buf": "^1.47.2",
+    "@onboarding/tsconfig": "workspace:*",
+    "@types/node": "^22.10.2",
+    "rimraf": "^6.0.1",
+    "tsup": "^8.3.5",
+    "tsx": "^4.19.2",
+    "typescript": "^5.7.2"
+  }
+}

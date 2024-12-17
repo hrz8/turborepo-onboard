@@ -11,13 +11,13 @@
   "module": "dist/index.js",
   "types": "dist/index.d.ts",
   "files": [
-    "dist",
+    "dist/*",
     "package.json"
   ],
   "scripts": {
-    "cleanup": "rm -rf dist && rm -rf node_modules",
+    "cleanup": "rimraf .turbo; rimraf dist; rimraf node_modules",
     "build": "tsup",
-    "dev": "tsup - watch",
+    "dev:pkg": "tsup --watch",
     "check-types": "tsc --noEmit",
     "lint": "echo 'unimplemented'"
   },
@@ -27,6 +27,7 @@
   "devDependencies": {
     "@onboarding/tsconfig": "workspace:*",
     "@types/node": "^22.10.2",
+    "rimraf": "^6.0.1",
     "tsup": "^8.3.5",
     "typescript": "^5.7.2"
   }

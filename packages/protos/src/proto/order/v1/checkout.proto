@@ -1,0 +1,15 @@
+syntax = "proto3";
+package order.v1;
+
+message CheckoutRequest {
+  string product = 1;
+  string qty = 2;
+}
+
+message CheckoutResponse {
+  string message = 1;
+}
+
+service OrderService {
+  rpc Checkout(CheckoutRequest) returns (CheckoutResponse) {}
+}

@@ -1,0 +1,15 @@
+syntax = "proto3";
+package greeter.v2;
+
+message GoodByeRequestV2 {
+  string name = 1;
+  string reason = 2;
+}
+
+message GoodByeResponseV2 {
+  string message = 1;
+}
+
+service GoodbyeServiceV2 {
+  rpc SayBye(GoodByeRequestV2) returns (GoodByeResponseV2) {}
+}

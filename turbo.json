@@ -4,7 +4,11 @@
   "tasks": {
     "build": {
       "dependsOn": ["^build"],
-      "outputs": ["dist/**"] 
+      "inputs": ["package.json", "src/**"],
+      "outputs": ["dist/**", "**/gen/**"] 
+    },
+    "dev:pkg": {
+      "dependsOn": ["^dev:pkg"]
     },
     "lint": {
       "dependsOn": ["^lint"]

@@ -1,0 +1,1 @@
+export { GrpcTransport } from '@protobuf-ts/grpc-transport';
